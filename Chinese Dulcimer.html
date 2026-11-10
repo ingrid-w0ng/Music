@@ -10,8 +10,9 @@
   <p>Continue to <a id="youtube" href="https://www.youtube.com/watch?v=dGl3kAAlXU8">YouTube</a>.</p>
   <script>
     // Optional custom tracking name: ?v=abc
-    const name = new URLSearchParams(location.search).get('v')?.trim() || document.title;
-    const params = new URLSearchParams({ p: location.pathname, t: name });
+    const value = new URLSearchParams(location.search).get('v')?.trim();
+    const path = location.pathname + (value ? '?v=' + encodeURIComponent(value) : '');
+    const params = new URLSearchParams({ p: path, t: value || document.title });
     fetch('https://ingrid-w0ng.goatcounter.com/count?' + params, {
       mode: 'no-cors', keepalive: true, credentials: 'omit'
     }).catch(() => {});
