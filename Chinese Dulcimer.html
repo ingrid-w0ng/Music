@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chinese Dulcimer</title>
+</head>
+<body>
+  <!-- Paste your YouTube URL into href below. -->
+  <p>Continue to <a id="youtube" href="https://www.youtube.com/watch?v=dGl3kAAlXU8">YouTube</a>.</p>
+  <script>
+    // Optional custom tracking name: ?v=abc
+    const name = new URLSearchParams(location.search).get('v')?.trim() || document.title;
+    const params = new URLSearchParams({ p: location.pathname, t: name });
+    fetch('https://ingrid-w0ng.goatcounter.com/count?' + params, {
+      mode: 'no-cors', keepalive: true, credentials: 'omit'
+    }).catch(() => {});
+    window.location.replace(document.getElementById('youtube').href);
+  </script>
+  <noscript>
+    <img src="https://ingrid-w0ng.goatcounter.com/count?p=/Chinese%20Dulcimer.html&amp;t=Chinese Dulcimer"
+         width="1" height="1" alt="">
+  </noscript>
+</body>
+</html>
