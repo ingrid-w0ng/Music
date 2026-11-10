@@ -9,10 +9,11 @@
   <!-- Paste your YouTube URL into href below. -->
   <p>Continue to <a id="youtube" href="https://www.youtube.com/watch?v=55cUMs0dm0E">YouTube</a>.</p>
   <script>
-    // Optional custom tracking name: ?v=abc
+    // Optional custom referrer: ?v=001
     const value = new URLSearchParams(location.search).get('v')?.trim();
-    const path = location.pathname + (value ? '?v=' + encodeURIComponent(value) : '');
-    const params = new URLSearchParams({ p: path, t: value || document.title });
+    const params = new URLSearchParams({
+      p: location.pathname, t: document.title, r: value || document.referrer
+    });
     fetch('https://ingrid-w0ng.goatcounter.com/count?' + params, {
       mode: 'no-cors', keepalive: true, credentials: 'omit'
     }).catch(() => {});
