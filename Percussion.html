@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Percussion</title>
+</head>
+<body>
+  <!-- Paste your YouTube URL into href below. -->
+  <p>Continue to <a id="youtube" href="https://www.youtube.com/watch?v=55cUMs0dm0E">YouTube</a>.</p>
+  <script>
+    // Label this pageview "Percussion" in GoatCounter; redirect immediately.
+    fetch('https://ingrid-w0ng.goatcounter.com/count?p=/youtube.html&t=Percussion', {
+      mode: 'no-cors', keepalive: true, credentials: 'omit'
+    }).catch(() => {});
+    window.location.replace(document.getElementById('youtube').href);
+  </script>
+  <noscript>
+    <img src="https://ingrid-w0ng.goatcounter.com/count?p=/youtube.html&amp;t=Percussion"
+         width="1" height="1" alt="">
+  </noscript>
+</body>
+</html>
